@@ -1,4 +1,3 @@
-/* global exports, console */
 "use strict";
 
 // module Control.Monad.Eff.Console
