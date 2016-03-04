@@ -1,18 +1,19 @@
-/* global exports, console */
-"use strict";
+-- module Control.Monad.Eff.Console.Unsafe
 
-// module Control.Monad.Eff.Console.Unsafe
+local Control_Monad_Eff_Console_Unsafe = {}
 
-exports.logAny = function (s) {
-  return function () {
-    console.log(s);
-    return {};
-  };
-};
+Control_Monad_Eff_Console_Unsafe.logAny = function (s)
+  return function ()
+    print(s)
+    return {}
+  end
+end
 
-exports.errorAny = function (s) {
-  return function () {
-    console.error(s);
-    return {};
-  };
-};
+Control_Monad_Eff_Console_Unsafe.errorAny = function (s)
+  return function ()
+    print("[ERROR]" .. s)
+    return {}
+  end
+end
+
+return Control_Monad_Eff_Console_Unsafe

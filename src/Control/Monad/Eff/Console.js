@@ -1,18 +1,19 @@
-/* global exports, console */
-"use strict";
+-- module Control.Monad.Eff.Console
 
-// module Control.Monad.Eff.Console
+local Control_Monad_Eff_Console = {}
 
-exports.log = function (s) {
-  return function () {
-    console.log(s);
-    return {};
-  };
-};
+Control_Monad_Eff_Console.log = function (s)
+  return function ()
+    print(s);
+    return {}
+  end
+end
 
-exports.error = function (s) {
-  return function () {
-    console.error(s);
-    return {};
-  };
-};
+Control_Monad_Eff_Console.error = function (s)
+  return function ()
+    print("[ERROR]" .. s)
+    return {}
+  end
+end
+
+return Control_Monad_Eff_Console
