@@ -9,9 +9,23 @@ Control_Monad_Eff_Console.log = function (s)
   end
 end
 
+Control_Monad_Eff_Console.warn = function (s)
+  return function ()
+    print("[WARNING]" .. s)
+    return {}
+  end
+end
+
 Control_Monad_Eff_Console.error = function (s)
   return function ()
     print("[ERROR]" .. s)
+    return {}
+  end
+end
+
+Control_Monad_Eff_Console.info = function (s)
+  return function ()
+    print("[INFO]" .. s)
     return {}
   end
 end
